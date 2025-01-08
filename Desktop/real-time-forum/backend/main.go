@@ -10,11 +10,20 @@ func main() {
 	InitializeDB()
 	CloseDB()
 
+	err := InitDatabase()
+	if err != nil {
+		log.Fatalf("Failed to initialize database: %v", err)
+	}
+
 	// Define routes
 	http.HandleFunc("/ws", WebSocketHandler)      // WebSocket connection
 	http.HandleFunc("/register", RegisterHandler) // User registration
 	http.HandleFunc("/login", LoginHandler)       // User login
 	http.HandleFunc("/posts", PostsHandler)       // Posts (create and retrieve)
+
+	http.HandleFunc("/navbar.html", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "../frontend/navbar.html")
+	})
 
 	// Serve the `css` and `js` folders
 	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("../frontend/css"))))
@@ -51,10 +60,10 @@ func main() {
 		http.ServeFile(w, r, "../frontend/login.html")
 	})
 
-	http.HandleFunc("/newpost", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/posts.html", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "../frontend/posts.html")
 	})
-	http.HandleFunc("/chats", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/chat.html", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "../frontend/chat.html")
 	})
 

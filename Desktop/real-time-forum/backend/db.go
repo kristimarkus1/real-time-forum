@@ -46,3 +46,20 @@ func CloseDB() {
 func GetDB() *sql.DB {
 	return db
 }
+
+func InitDatabase() error {
+	var err error
+	db, err = sql.Open("sqlite3", "forum.db")
+	if err != nil {
+		return err
+	}
+
+	// Test the database connection
+	err = db.Ping()
+	if err != nil {
+		return err
+	}
+
+	log.Println("Database connected successfully.")
+	return nil
+}

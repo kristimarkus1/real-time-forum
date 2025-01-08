@@ -3,14 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>posts</title>
-    <link rel="stylesheet" href="frontend/css/style.css">
-    <script src="loadNavbar.js" defer></script>
-
+    <title>Homepage</title>
+    <!-- Add CSS for styling -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Load Navbar Script -->
+    <script src="js/loadNavbar.js" defer></script>
+    <!-- Load Homepage Script -->
+    <script src="js/homepage.js" defer></script>
 </head>
 <body>
-    <div id="posts"></div>
-    <script src="frontend/js/posts.js"></script>
-    <h1>Hello to posts</h1>
+    <!-- Navbar Placeholder -->
+    <div id="navbar"></div>
+
+    <nav>
+        <ul class="navbar">
+            <li><a href="#" onclick="fetchPosts('All')">All</a></li>
+            <li><a href="#" onclick="fetchPosts('IT')">IT</a></li>
+            <li><a href="#" onclick="fetchPosts('Books')">Books</a></li>
+            <li><a href="#" onclick="fetchPosts('Other')">Other</a></li>
+        </ul>
+    </nav>
+    
+
+    <!-- Content Section -->
+    <h1>Welcome, <span id="username"></span>!</h1>
+    
+
+    <section>
+        <h2>Create a New Post</h2>
+        <form id="post-form">
+            <input type="text" name="title" placeholder="Post Title" required>
+            <textarea name="content" placeholder="Post Content" required></textarea>
+            <select name="category" required>
+                <option value="All">All</option>
+                <option value="IT">IT</option>
+                <option value="Books">Books</option>
+                <option value="Other">Other</option>
+            </select>
+            <button type="submit">Create Post</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Your Posts</h2>
+        <ul id="posts-list"></ul>
+    </section>
 </body>
 </html>
