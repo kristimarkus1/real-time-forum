@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+
+body {
+    font-family: 'Jersey 15', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e0e0e0; /* Light text color */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    flex-direction: column; /* Stack elements vertically */
+}
+
+#app {
+    text-align: center;
+    /* Remove these background and box-shadow properties to get rid of the white box */
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    width: auto; /* Optional: adjust to fit content */
+    max-width: none; /* Optional: adjust to fit content */
+    margin: 0; /* Optional: adjust for alignment */
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0; /* Remove extra margin */
+    text-align: center;
+    color: #e0e0e0;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Add spacing between buttons */
+    margin-top: 20px; /* Add space below the heading */
+}
+
+button {
+    font-family: 'Jersey 15', serif;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, select, button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+#post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#post-form input,
+#post-form textarea,
+#post-form button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#post-form button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#post-form button:hover {
+    background-color: #0056b3;
+}
+
+#posts-list {
+    list-style: none;
+    padding: 0;
+}
+
+#posts-list li {
+    margin: 10px 0;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.delete-button {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.delete-button:hover {
+    background: #cc0000;
+}
